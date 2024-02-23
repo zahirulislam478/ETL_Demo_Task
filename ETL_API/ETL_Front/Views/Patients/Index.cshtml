@@ -1,0 +1,41 @@
+﻿@model IEnumerable<Patient>
+@{
+    ViewData["Title"] = "Index";
+}
+
+<div class="row">
+    <div class="col-12">
+        <h3 class="text-center" style="margin-top:20px;"><u>Patients Informations</u></h3>
+        <div class="d-flex justify-content-end mb-1">
+            <a class="btn btn-primary btn-sm mb-2" asp-action="Create" asp-controller="Patients"> <i class="bi bi-plus"></i> Add New</a>
+        </div>
+        <table class="table table-bordered table-striped">
+            <thead class="table-light ">
+                <tr>
+                    <th>Patient Name</th>
+                    <th>Disease</th>
+                    <th>Epilepsy</th>
+                    <th>Allergies</th>
+                    <th>NCDs</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var p in Model)
+                {
+                    <tr>
+                        <td>@p.PatientName</td>
+                        <td>@p.DiseaseInformation.DiseaseName</td>
+                        <td>@p.Epilepsy</td>
+                        <td>@(string.Join(", ", p.Allergy_Details.Select(x => x.Allergy.AllergyName).ToList()))</td>
+                        <td>@(string.Join(", ", p.NCD_Details.Select(x => x.NCD.NCDName).ToList()))</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+
+@section styles
+{
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+}

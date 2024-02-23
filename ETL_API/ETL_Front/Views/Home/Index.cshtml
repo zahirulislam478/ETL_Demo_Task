@@ -1,0 +1,64 @@
+﻿@{
+    ViewBag.Title = "Index";
+}
+
+<div class="row">
+    <div class="col-md-8 offset-md-2">
+        <div class="card bg-secondary text-white">
+            <div class="card-body">
+                <h5 class="card-title">Demo Task</h5>
+                <p class="card-text">This demonstration task features a modern web application developed using the latest version of ASP.NET Core MVC framework along with ASP.NET Core Web API. </p>
+                <p class="card-text">Key Features:</p>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item"><i class="fas fa-check text-white"></i> Integration of Enums and Master Tables.</li>
+                    <li class="list-group-item"><i class="fas fa-check text-white"></i> Multiple Selection for NCDs and Allergies.</li>
+                    <li class="list-group-item"><i class="fas fa-check text-white"></i> Repository Pattern Implementation for data access.</li>
+                    <li class="list-group-item"><i class="fas fa-check text-white"></i> Use of Entity Framework Core for data interactions.</li>
+                    <li class="list-group-item"><i class="fas fa-check text-white"></i> Styling with Bootstrap for enhanced UI and Validation for reliability.</li>
+                </ul>
+                <p class="card-text mt-3">Please navigate through the application to explore its functionality.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section styles
+{
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+
+    <style>
+        .card {
+            border: 2px solid #333;
+            padding: 20px;
+            margin: 20px auto;
+            background-color: #f7f7f7;
+            border-radius: 10px;
+            text-align: left;
+        }
+
+        .card-title {
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .card-text {
+            font-size: 16px;
+        }
+
+        .list-group-item {
+            background-color: transparent;
+            border: none;
+            font-size: 16px;
+            color: white; /* Set text color to white */
+        }
+
+            .list-group-item::before {
+                content: "•"; /* Show bullet */
+                margin-right: 10px; /* Adjust bullet spacing */
+            }
+
+        .card-text:last-child {
+            margin-top: 20px;
+        }
+    </style>
+}

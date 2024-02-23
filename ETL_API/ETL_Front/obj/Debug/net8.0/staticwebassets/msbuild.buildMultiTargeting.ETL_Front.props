@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\ETL_Front.props" />
+</Project>

@@ -1,0 +1,66 @@
+﻿
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - My ASP.NET Application</title>
+    <link href="~/libs/bootstrap/css/bootstrap.css" rel="stylesheet" />
+    <script src="~/libs/bootstrap/js/bootstrap.bundle.js"></script>
+    <style>
+        body {
+            padding-top: 70px;
+            /*background-color: #215d6e;
+                    color:white;*/
+        }
+
+        .main {
+            min-height: calc(100vh - 110px);
+        }
+
+        ul li {
+            margin-right: 20px;
+        }
+
+        .nav-link {
+            color: #fff;
+            transition: color 0.3s; /* Add smooth transition for color change */
+        }
+
+            .nav-link:hover,
+            .nav-item.active .nav-link { /* Apply hover color to active link */
+                color: #87CEEB !important; /* Light blue color for hover and active links */
+            }
+    </style>
+    @RenderSection("styles", false)
+</head>
+<body>
+    <navbar class="navbar navbar-expand-md fixed-top shadow-sm pe-5" style="background: linear-gradient(to left, #4b6cb7, #182848);">
+        <div class="container-fluid">
+            <span class="navbar-brand text-light" style="font-family: 'Comic Sans MS', cursive; margin-left: 35px">
+                <a href="@Url.Action("Index", "Home")" class="text-light text-decoration-none">Excel<sup> Task</sup></a>
+            </span>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nv" aria-controls="nv" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="navbar-collapse" id="nv">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active text-light text-decoration-none" aria-current="page" asp-action="Index" asp-controller="Home">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active text-light text-decoration-none" aria-current="page" asp-action="Index" asp-controller="Patients">Patients</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </navbar>
+    <main class="container main">
+        @RenderBody()
+    </main>
+    <footer class="container-fluid">
+        <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
+    </footer>
+    @RenderSection("scripts", false)
+</body>
+</html>

@@ -1,0 +1,137 @@
+﻿@model PatientInputModel
+@{
+    ViewData["Title"] = "Create";
+}
+
+<div class="container-center">
+    <div class="row">
+        <div class="col-12">
+            <form asp-action="Create" asp-controller="Patients" method="post">
+
+                @if (ViewBag.Msg == "done")
+                {
+                    <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                        <strong>Success!</strong> @ViewBag.Message
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    </div>
+                }
+
+                <div class="form-group row mb-1">
+                    <label asp-for="PatientName" class="col-form-label col-form-label-sm col-2 required" style="font-weight:bold;">PatientName</label>
+                    <div class="col-8 mb-2">
+                        <input type="text" class="form-control form-control-sm" asp-for="PatientName" />
+                        <span asp-validation-for="PatientName" class="text-danger" style="font-size: small"></span>
+                    </div>
+                </div>
+
+                <div class="form-group row mb-1">
+                    <label asp-for="DiseaseInformationId" class="col-form-label col-form-label-sm col-2 required" style="font-weight:bold;">Diseases Name</label>
+                    <div class="col-8 mb-2">
+                        <select class="form-select form-select-sm" asp-for="DiseaseInformationId" asp-items="@(new SelectList(ViewBag.DiseaseInformations, "DiseaseInformationId", "DiseaseName"))">
+                            <option value="" selected></option>
+                        </select>
+                        <span asp-validation-for="DiseaseInformationId" class="text-danger" style="font-size: small"></span>
+                    </div>
+                </div>
+
+                <div class="form-group row mb-1">
+                    <label asp-for="Epilepsy" class="col-form-label col-form-label-sm col-2 required" style="font-weight:bold;">Epilepsy</label>
+                    <div class="col-8 mb-2">
+                        <select class="form-select form-select-sm" asp-for="Epilepsy" asp-items="@(Html.GetEnumSelectList<EpilepsyType>())">
+                            <option value="" selected></option>
+                        </select>
+                        <span asp-validation-for="Epilepsy" class="text-danger" style="font-size: small"></span>
+                    </div>
+                </div>
+
+                <div class="form-group row mb-1">
+                    <label asp-for="NCDIds" class="col-form-label col-form-label-sm col-2" style="font-weight:bold;">Other NCDs</label>
+                    <div class="col-3 mb-2">
+                        <select multiple class="form-control form-control-sm" size="5" id="ncd" asp-items="@(new SelectList(ViewBag.NCDs, "NCDId", "NCDName"))">
+                        </select>
+                    </div>
+                    <div class="col-2 d-flex flex-column justify-content-center align-items-center">
+                        <button type="button" class="btn btn-outline-primary btn-sm mb-2" style="width: 90px" id="add2">Add &gt;</button>
+                        <button type="button" class="btn btn-outline-secondary btn-sm" style="width: 90px" id="remove2">&lt; Remove</button>
+                    </div>
+                    <div class="col-3 mb-2">
+                        <select class="form-control form-control-sm" size="5" asp-for="NCDIds">
+                        </select>
+                        <span asp-validation-for="AllergyIds" class="text-danger" style="font-size: small"></span>
+                    </div>
+                </div>
+
+                <div class="form-group row mb-1">
+                    <label asp-for="AllergyIds" class="col-form-label col-form-label-sm col-2 required" style="font-weight:bold;">Allergies</label>
+                    <div class="col-3 mb-2">
+                        <select multiple class="form-control form-control-sm" size="5" id="allergy" asp-items="@(new SelectList(ViewBag.allergies, "AllergyId", "AllergyName"))">
+                        </select>
+                    </div>
+                    <div class="col-2 d-flex flex-column justify-content-center align-items-center">
+                        <button type="button" class="btn btn-outline-primary btn-sm mb-2" style="width: 90px" id="add1">Add &gt;</button>
+                        <button type="button" class="btn btn-outline-secondary btn-sm" style="width: 90px" id="remove1">&lt; Remove</button>
+                    </div>
+                    <div class="col-3 mb-2">
+                        <select class="form-control form-control-sm" size="5" asp-for="AllergyIds"></select>
+                        <span asp-validation-for="AllergyIds" class="text-danger" style="font-size: small"></span>
+                    </div>
+                </div>
+
+                <div class="form-group row mb-1" style="margin-top:20px;">
+                    <div class="d-flex justify-content-center">
+                        <button type="submit" class="btn btn-primary">Save</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+@section styles
+{
+    <link href="~/libs/bootstrap/css/bootstrap.css" rel="stylesheet" />
+    <style>
+        .required::after {
+            content: "*";
+            color: red;
+        }
+
+        .container-center {
+            margin-left:120px;
+            margin-top:20px;
+        }
+    </style>
+}
+
+@section scripts
+{
+    <script src="~/libs/jquery/jquery.js"></script>
+    <script src="~/libs/validate/jquery.validate.js"></script>
+    <script src="~/libs/validate/jquery.validate.unobtrusive.js"></script>
+    <script>
+        $("#add2").click(function () {
+            console.log($("#ncd option:selected"))
+            $("#ncd option:selected").each(function () {
+                $(this).remove().appendTo("#NCDIds");
+            });
+        });
+        $("#remove2").click(function () {
+            console.log('ok')
+            $("#NCDIds option:selected").each(function () {
+                $(this).remove().appendTo("#ncd");
+            });
+        });
+        $("#add1").click(function () {
+            console.log('ok')
+            $("#allergy option:selected").each(function () {
+                $(this).remove().appendTo("#AllergyIds");
+            });
+        });
+        $("#remove1").click(function () {
+            console.log('ok')
+            $("#AllergyIds option:selected").each(function () {
+                $(this).remove().appendTo("#allergy");
+            });
+        });
+    </script>
+}

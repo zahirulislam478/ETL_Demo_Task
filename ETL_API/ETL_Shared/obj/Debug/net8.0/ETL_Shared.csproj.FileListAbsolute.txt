@@ -1,0 +1,12 @@
+C:\Users\Zahirul Islam\ETL_API\ETL_Shared\bin\Debug\net8.0\ETL_Shared.deps.json
+C:\Users\Zahirul Islam\ETL_API\ETL_Shared\bin\Debug\net8.0\ETL_Shared.dll
+C:\Users\Zahirul Islam\ETL_API\ETL_Shared\bin\Debug\net8.0\ETL_Shared.pdb
+C:\Users\Zahirul Islam\ETL_API\ETL_Shared\obj\Debug\net8.0\ETL_Shared.csproj.AssemblyReference.cache
+C:\Users\Zahirul Islam\ETL_API\ETL_Shared\obj\Debug\net8.0\ETL_Shared.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Zahirul Islam\ETL_API\ETL_Shared\obj\Debug\net8.0\ETL_Shared.AssemblyInfoInputs.cache
+C:\Users\Zahirul Islam\ETL_API\ETL_Shared\obj\Debug\net8.0\ETL_Shared.AssemblyInfo.cs
+C:\Users\Zahirul Islam\ETL_API\ETL_Shared\obj\Debug\net8.0\ETL_Shared.csproj.CoreCompileInputs.cache
+C:\Users\Zahirul Islam\ETL_API\ETL_Shared\obj\Debug\net8.0\ETL_Shared.dll
+C:\Users\Zahirul Islam\ETL_API\ETL_Shared\obj\Debug\net8.0\refint\ETL_Shared.dll
+C:\Users\Zahirul Islam\ETL_API\ETL_Shared\obj\Debug\net8.0\ETL_Shared.pdb
+C:\Users\Zahirul Islam\ETL_API\ETL_Shared\obj\Debug\net8.0\ref\ETL_Shared.dll

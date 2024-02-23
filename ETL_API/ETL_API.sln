@@ -1,0 +1,40 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.9.34607.119
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ETL_API", "ETL_API\ETL_API.csproj", "{1CCD6A27-DCFF-4279-AA52-00C6C07942E9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ETL_Front", "ETL_Front\ETL_Front.csproj", "{00432C4D-4DBA-4C47-B20D-53BA50801AC2}"
+	ProjectSection(ProjectDependencies) = postProject
+		{ACF3B983-E9F9-449F-949C-D10D35571A1C} = {ACF3B983-E9F9-449F-949C-D10D35571A1C}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ETL_Shared", "ETL_Shared\ETL_Shared.csproj", "{ACF3B983-E9F9-449F-949C-D10D35571A1C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1CCD6A27-DCFF-4279-AA52-00C6C07942E9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1CCD6A27-DCFF-4279-AA52-00C6C07942E9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1CCD6A27-DCFF-4279-AA52-00C6C07942E9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1CCD6A27-DCFF-4279-AA52-00C6C07942E9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{00432C4D-4DBA-4C47-B20D-53BA50801AC2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{00432C4D-4DBA-4C47-B20D-53BA50801AC2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{00432C4D-4DBA-4C47-B20D-53BA50801AC2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{00432C4D-4DBA-4C47-B20D-53BA50801AC2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ACF3B983-E9F9-449F-949C-D10D35571A1C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ACF3B983-E9F9-449F-949C-D10D35571A1C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ACF3B983-E9F9-449F-949C-D10D35571A1C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ACF3B983-E9F9-449F-949C-D10D35571A1C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {1BFC6603-49D0-4E17-9ADB-BFE2C105209F}
+	EndGlobalSection
+EndGlobal
