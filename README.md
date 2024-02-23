@@ -12,7 +12,7 @@ This is a sample ASP.NET Core Web API project that provides endpoints for managi
 ## Usage
 - Two windows will automatically open:
   - Swagger UI: Explore and test the API endpoints.
-  - MVC View: Navigate to `/Home/Index` to view the user interface.
+  - MVC View: Navigate to `/Patients/Index` to view the user interface.
 - Method: `GET`
 - Description: Get a list of all users.
 - Example: `curl http://localhost:5015/api/Patients`
